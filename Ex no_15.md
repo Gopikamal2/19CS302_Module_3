@@ -1,48 +1,66 @@
-# EX 15  C program  to check whether the given number is Armstrong number or not.
+# EX 15 C program that reads a one-dimensional array of integers and replaces all even elements with 'E'.
 ## DATE:
+08.06.2026
 ## AIM:
-To write a C program  to check whether the given number is Armstrong number or not.
+To write a C program that reads a one-dimensional array of integers and replaces all even elements with 'E'.
 
 ## Algorithm
+1.Start the program.
 
-1.Start the program and read the number n from the user.
+2.Declare array and variables.
 
-2.Store the original value of n in a temporary variable N1.
+3.Get the size of the array.
 
-3.Initialize sum = 0 and extract each digit using n % 10 inside a loop.
+4.Read the array elements from the user.
 
-4.Add the cube of each digit to sum and update n = n / 10 until n becomes 0.
+5.Traverse the array using loop.
 
-5.Compare sum with N1; if equal, print Armstrong number, otherwise print not an Armstrong number.
+6.Check whether each element is even.
 
+7.If even, print 'E'.
+
+7.Otherwise, print the element.
+
+8.Stop the program.
 ## Program:
 ```
-#include<stdio.h>
+#include <stdio.h>
+
 int main()
 {
-    int r,n,sum=0,N1;
-    scanf("%d",&n);
-    N1=n;
-    while(n>0)
+    int a[10], n, i;
+
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++)
     {
-        r=n%10;
-        sum=sum+r*r*r;
-        n=n/10;
+        scanf("%d", &a[i]);
     }
-    if(N1==sum)
+
+    for(i = 0; i < n; i++)
     {
-        printf("%d is armstrong number ",N1);
+        if(a[i] % 2 == 0)
+        {
+            printf("E ");
+        }
+        else
+        {
+            printf("%d ", a[i]);
+        }
     }
-    else
-    {
-        printf("%d is not a armstrong number",N1); 
-    }
+
+    return 0;
 }
 ```
 
 ## Output:
+```
+5
+1 2 3 4 5
 
-<img width="645" height="176" alt="Screenshot 2026-03-19 140443" src="https://github.com/user-attachments/assets/52c07003-40e9-4488-90ba-dfb0d43f230a" />
+1 E 3 E 5
+```
+
 
 
 ## Result:
