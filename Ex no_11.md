@@ -1,50 +1,67 @@
-# EX 11 C program to convert a given value from binary to decimal using function with return type with out arguments
+# EX 11 C Program to convert a given decimal value to binary using function without arguments with return type.
 ## DATE:
+08.06.2026
 ## AIM:
-To write a C  program to convert a given value from binary to decimal using function with return type with out arguments
+To write a C Program to convert a given decimal value to binary using function without arguments with return type.
 
 ## Algorithm
+1.Start the program.
 
-1.Start the program and read the binary number from the user.
+2.Declare a function to convert decimal to binary.
 
-2.Call the function convert(n) to convert the binary number into decimal.
+3.Get the decimal number from the user.
 
-3.Inside the function, initialize variables sum = 0 and p = 0 (position).
+4.Convert the decimal number into binary form.
 
-4.Extract each digit of the binary number using modulus and multiply it with 
-2p2, then add it to sum and increment p.
+5.Return the binary value from the function.
 
-5.Return the calculated decimal value and display the result.
+6.Display the binary value.
+
+7.Stop the program.
 
 ## Program:
 ```
-#include<stdio.h>
-#include<math.h>
-int convert(int n)
+#include <stdio.h>
+
+int n;
+
+long int binary()
 {
-    int r,sum=0,p=0;
-    while(n>0)
+    int rem;
+    long int bin = 0, place = 1;
+
+    while(n > 0)
     {
-    r=n%10;
-    sum=sum+r*pow(2,p);
-    n=n/10;
-    p++;
+        rem = n % 2;
+        bin = bin + (rem * place);
+        place = place * 10;
+        n = n / 2;
     }
-    return sum;
+
+    return bin;
 }
+
 int main()
 {
-    int n;
-    scanf("%d",&n);
-    int sum=convert(n);
-    printf("%d in binary = %d in decimal",n,sum);
+    long int result;
+
+    scanf("%d", &n);
+
+    result = binary();
+
+    printf("%ld", result);
+
     return 0;
 }
 ```
 
 ## Output:
+```
+10
 
-<img width="596" height="169" alt="Screenshot 2026-03-19 134125" src="https://github.com/user-attachments/assets/de85df1e-1012-4fe2-bcdf-88348a18414e" />
+1010
+```
+
 
 
 ## Result:
