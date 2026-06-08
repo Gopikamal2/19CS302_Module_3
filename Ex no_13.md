@@ -1,60 +1,68 @@
-# EX 13 To write a  C program to read the elements and print only the odd numbers in the n x n matrix
+# EX 13 To write a C program to read the elements and print only the odd elements in the 2D array.
 ## DATE:
+08.06.2026
 ## AIM:
-To write a  C program to read the elements and print only the odd numbers in the n x n matrix
+To write a C program to read the elements and print only the odd elements in the 2D array.
 
 ## Algorithm
+1.Start the program.
 
-1.Start the program and read the size n of the matrix.
+2.Declare a 2D array and variables.
 
-2.Declare a 2D array a[n][n] and read all the elements using nested loops.
+3.Get the number of rows and columns.
 
-3.Traverse the matrix again using nested loops.
+4.Read the array elements from the user.
 
-4.For each element, check if it is odd using the condition a[i][j] % 2 != 0.
+5.Traverse the array using nested loops.
 
-5.If the condition is true, print the position and value of the odd element, then stop the program.
+6.Check whether each element is odd.
+
+7.Print the odd elements.
+
+8.Stop the program.
 
 ## Program:
 ```
-/*
-Program to read the elements and print only the odd elements in the 2D array.
-Developed by: 
-RegisterNumber:  
-#include<stdio.h>
+#include <stdio.h>
+
 int main()
 {
-    int i,j,n,a[10][10];
-    scanf("%d",&n);
-    for(i=0;i<n;i++)
+    int a[10][10], i, j, r, c;
+
+    scanf("%d %d", &r, &c);
+
+    for(i = 0; i < r; i++)
     {
-        for(j=0;j<n;j++)
+        for(j = 0; j < c; j++)
         {
-            scanf("%d",&a[i][j]);
+            scanf("%d", &a[i][j]);
         }
     }
-    for(i=0;i<n;i++)
+
+    for(i = 0; i < r; i++)
     {
-        for(j=0;j<n;j++)
+        for(j = 0; j < c; j++)
         {
-            if(a[i][j]%2!=0)
+            if(a[i][j] % 2 != 0)
             {
-                printf("a[%d][%d] is %d\n",i,j,a[i][j]);
+                printf("%d ", a[i][j]);
             }
-            
-            
         }
-        printf("\n");
     }
-    
-    
-    
+
+    return 0;
 }
 ```
 
 ## Output:
+```
+2 3
+1 2 3
+4 5 6
 
-<img width="609" height="436" alt="Screenshot 2026-03-19 135428" src="https://github.com/user-attachments/assets/620e013a-98a5-4f00-8748-8cf25434e41e" />
+1 3 5
+```
+
 
 
 ## Result:
