@@ -1,67 +1,65 @@
-# EX 14 C program to delete an element in array at specified position 
-
+# EX 14 C program to delete first element in an array.
 ## DATE:
+08.06.2026
 ## AIM:
-To write a C program  to delete an element in array at specified position.
+To write a C program to delete first element in an array.
 
 ## Algorithm
+1.Start the program.
 
-1.Start the program and read the number of elements n in the array.
+2.Declare array and variables.
 
-2.Input the n elements into the array and display the original array.
+3.Get the size of the array.
 
-3.Read the position pos of the element to be deleted.
+4.Read the array elements from the user.
 
-4.Check if deletion is possible; if yes, shift elements from pos to n-1 one position to the left.
+5.Shift all elements one position to the left.
 
-5.Decrease the array size by 1 and display the updated array after deletion.
+6.Reduce the array size by one.
+
+7.Display the updated array.
+
+8.Stop the program. 
 
 ## Program:
 ```
-#include<stdio.h>
- 
-int main() 
+#include <stdio.h>
+
+int main()
 {
-    int array[100],i,n,pos;
- 
-    printf("Enter No.of.Elements to store in array:\n");    
-    scanf("%d",&n);
-  
-    for (i=0;i<n;i++) 
+    int a[10], n, i;
+
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++)
     {
-        scanf("%d",&array[i]);
-    }
-    printf("The original array elements are :\n");
-    for(i=0;i<n;i++) 
-    {
-        printf("array[%d] = %d\n",i,array[i]);
+        scanf("%d", &a[i]);
     }
 
-    printf("Enter the poisition to delete the element :\n");
-    scanf("%d",&pos);
-    if(n==pos)
+    for(i = 0; i < n - 1; i++)
     {
-        printf("Deletion Not Possible");
+        a[i] = a[i + 1];
     }
-    else
+
+    n--;
+
+    for(i = 0; i < n; i++)
     {
-    for(i=pos;i<n-1;i++)
-    {
-        array[i]=array[i+1];
+        printf("%d ", a[i]);
     }
-    n=n-1;
-    printf("The array elements after deletion :\n");
-    for(i=0;i<n;i++) 
-    {
-        printf("array[%d] = %d\n",i,array[i]);
-    }
-    }
+
+    return 0;
 }
 ```
 
 ## Output:
+```
+5
+10 20 30 40 50
 
-<img width="619" height="834" alt="Screenshot 2026-03-19 140156" src="https://github.com/user-attachments/assets/ce92df7e-fcdd-4070-88ff-8ea81095fc1c" />
+20 30 40 50
+```
+
 
 
 ## Result:
